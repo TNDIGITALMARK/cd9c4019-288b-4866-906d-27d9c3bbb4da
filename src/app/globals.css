@@ -1,97 +1,134 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+===========================================
+COREOS DESIGN SYSTEM - PIXEL-PERFECT REPLICATION
+Based on ai-generated-preview.png reference
+===========================================
+
+Color Palette (Exact Values):
+- Primary Dark Navy: #0a0e27 (HSL: 229 60% 10%)
+- Deep Blue-Black: #1a1d3a (HSL: 233 36% 17%)
+- Vibrant Blue: #4169ff (HSL: 225 100% 63%)
+- Vibrant Purple: #a855f7 (HSL: 271 91% 65%)
+- Gradient: Blue → Purple → Orange
+- Pure White: #ffffff
+- Light Gray: #8b92b0 (HSL: 229 16% 62%)
+
+Typography:
+- Font Family: Inter (modern sans-serif)
+- Heading Weight: 700-800
+- Body Weight: 400-500
+
+Layout:
+- Card Border Radius: 16px
+- Button Border Radius: 24px (pill)
+- Card Padding: 32px
+- Container Max Width: 1200px
+
+Visual Effects:
+- Card Shadows: Subtle glow
+- Gradient Buttons: Blue → Purple
+- Depth: Layered cards with shadows
 */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* CoreOS Dark Theme - Primary Colors */
+  --background: 229 60% 10%; /* #0a0e27 - Primary Dark Navy */
+  --foreground: 0 0% 100%; /* #ffffff - Pure White */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Card Backgrounds - Deep Blue-Black */
+  --card: 233 36% 17%; /* #1a1d3a */
+  --card-foreground: 0 0% 100%;
 
-  /* Popovers with white background */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  /* Popovers */
+  --popover: 233 36% 17%;
+  --popover-foreground: 0 0% 100%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* Primary: Vibrant Blue */
+  --primary: 225 100% 63%; /* #4169ff */
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Vibrant Purple */
+  --secondary: 271 91% 65%; /* #a855f7 */
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Light Gray */
+  --muted: 229 16% 62%; /* #8b92b0 */
+  --muted-foreground: 229 16% 62%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Vibrant Blue */
+  --accent: 225 100% 63%;
+  --accent-foreground: 0 0% 100%;
 
-  /* Destructive: Clean red */
+  /* Destructive: Red */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Borders: Subtle */
+  --border: 233 36% 25%;
+  --input: 233 36% 25%;
+  --ring: 225 100% 63%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border Radius - iOS Style */
+  --radius: 1rem; /* 16px for cards */
+  --radius-pill: 1.5rem; /* 24px for buttons */
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  /* CoreOS Gradient Colors */
+  --gradient-blue: #4169ff;
+  --gradient-purple: #a855f7;
+  --gradient-orange: #ff6b35;
+
+  /* Sidebar (if needed) */
+  --sidebar-background: 229 60% 10%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 225 100% 63%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 233 36% 17%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 233 36% 25%;
+  --sidebar-ring: 225 100% 63%;
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+  /* CoreOS uses consistent dark theme - same as :root */
+  --background: 229 60% 10%;
+  --foreground: 0 0% 100%;
 
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
+  --card: 233 36% 17%;
+  --card-foreground: 0 0% 100%;
 
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 233 36% 17%;
+  --popover-foreground: 0 0% 100%;
 
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  --primary: 225 100% 63%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 271 91% 65%;
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 229 16% 62%;
+  --muted-foreground: 229 16% 62%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 225 100% 63%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
+  --border: 233 36% 25%;
+  --input: 233 36% 25%;
+  --ring: 225 100% 63%;
+
+  --sidebar-background: 229 60% 10%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 225 100% 63%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-accent: 233 36% 17%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 233 36% 25%;
+  --sidebar-ring: 225 100% 63%;
 }
 
 @theme {
@@ -164,40 +201,215 @@ All colors MUST be HSL.
   }
 }
 
+/* ========================================
+   GLOBAL RESETS & BASE STYLES
+   ======================================== */
+
 * {
+  box-sizing: border-box;
   border-color: hsl(var(--border));
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
+/* ========================================
+   TYPOGRAPHY SCALE - CoreOS Style
+   ======================================== */
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: hsl(var(--foreground));
+  margin: 0;
+  line-height: 1.2;
 }
 
-/* Clean button styles */
+h1 {
+  font-size: 3rem; /* 48px */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ========================================
+   BUTTON DEFAULTS - iOS Style
+   ======================================== */
+
 button {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-pill);
 }
 
-/* Subtle shadows for depth */
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsla(var(--primary) / 0.1);
+}
+
+/* ========================================
+   SHADOWS - iOS Style with Glow
+   ======================================== */
+
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.1);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2),
+              0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+              0 4px 6px -4px rgb(0 0 0 / 0.2);
+}
+
+.shadow-lg {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3),
+              0 8px 10px -6px rgb(0 0 0 / 0.2);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(65, 105, 255, 0.3),
+              0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+/* ========================================
+   GRADIENT UTILITIES
+   ======================================== */
+
+.gradient-primary {
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg,
+    #4169ff 0%,
+    #a855f7 50%,
+    #ff6b35 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   ANIMATIONS - Spring Physics
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
 }

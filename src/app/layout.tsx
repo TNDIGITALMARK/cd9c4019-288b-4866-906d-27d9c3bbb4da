@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "CoreOS - Reimagine Everything",
+  description: "A revolutionary mobile operating system focused on simplicity, speed, and user empowerment",
 };
 
 export default function RootLayout({
